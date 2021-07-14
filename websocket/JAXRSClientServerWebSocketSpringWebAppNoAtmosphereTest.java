@@ -67,6 +67,7 @@ public class JAXRSClientServerWebSocketSpringWebAppNoAtmosphereTest extends Abst
     public static void stopServers() throws Exception {
         server.stop();
         server.destroy();
+        System.clearProperty("org.apache.cxf.transport.websocket.atmosphere.disabled");
     }
 
     @Test

@@ -42,6 +42,11 @@ public class JAXRSClientServerWebSocketSpringNoAtmosphereTest extends JAXRSClien
                     "/jaxrs_websocket/beans-embedded2.xml").toString());
     }
 
+    @AfterClass
+    public static void cleanup() {
+        System.clearProperty("org.apache.cxf.transport.websocket.atmosphere.disabled");
+    }
+
     protected String getPort() {
         return PORT;
     }

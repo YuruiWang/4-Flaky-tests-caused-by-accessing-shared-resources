@@ -40,6 +40,11 @@ public class JAXRSClientServerWebSocketNoAtmosphereTest extends AbstractJAXRSCli
         createStaticBus();
     }
 
+    @AfterClass
+    public static void cleanup() {
+        System.clearProperty("org.apache.cxf.transport.websocket.atmosphere.disabled");
+    }
+
     protected String getPort() {
         return PORT;
     }
